@@ -1,0 +1,13 @@
+{
+  "name": "$name;format="lower,hyphen"$-frontent",
+  "source": "assets/index.html",
+  "scripts": {
+    "start": "parcel assets/dev-index.html --no-cache",
+    "build": "parcel build assets/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10",
+    "typescript": "^5.1.6"
+  }
+}

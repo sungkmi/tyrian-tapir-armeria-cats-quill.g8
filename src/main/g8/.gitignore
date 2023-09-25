@@ -1,0 +1,17 @@
+*.class
+*.log
+
+# config
+application.conf
+
+# npm
+node_modules
+
+# parcel
+.cache
+.parcel-cache
+dist
+.env
+
+# sbt-liquibase related
+liquibase.sbt
