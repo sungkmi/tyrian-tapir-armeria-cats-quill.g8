@@ -1,13 +1,13 @@
 val V = new {
-  val Scala      = "3.3.0"
+  val Scala      = "3.3.1"
   val ScalaGroup = "3.3"
 
   val catsEffect = "3.5.1"
-  val tapir      = "1.6.4"
-  val sttp       = "3.8.16"
+  val tapir      = "1.7.5"
+  val sttp       = "3.9.0"
 
   val pureconfig = "0.17.4"
-  val jasync     = "2.2.2"
+  val jasync     = "2.2.4"
   val scodecBits = "1.1.37"
 
   val quill      = "4.6.0.1"
@@ -15,13 +15,13 @@ val V = new {
   val pgEmbedded = "1.0.1"
   val postgresql = "42.6.0"
 
-  val tyrian        = "0.7.1"
+  val tyrian        = "0.8.0"
   val scalaJavaTime = "2.5.0"
 
   val organiseImports = "0.6.0"
   val zerowaste       = "0.2.7"
 
-  val scribe          = "3.11.9"
+  val scribe          = "3.12.2"
   val hedgehog        = "0.10.1"
   val munitCatsEffect = "2.0.0-M3"
 }

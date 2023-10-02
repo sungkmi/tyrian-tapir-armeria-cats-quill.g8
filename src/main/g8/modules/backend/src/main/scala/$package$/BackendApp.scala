@@ -29,7 +29,8 @@ object BackendApp:
       session: Ref[F, Set[UUID]],
   ) =
     Api.loginEndpoint.serverLogic: (loginRequest: LoginRequest) =>
-      ???
+      Async[F].delay:
+        ???
 
   def allEndpoints[F[_]: Async](
       config: BackendConfig,
@@ -48,7 +49,7 @@ object BackendApp:
     def log[F[_]: Async](
         level: scribe.Level,
     )(msg: String, exOpt: Option[Throwable])(using
-        mdc: scribe.data.MDC,
+        mdc: scribe.mdc.MDC,
     ): F[Unit] = Async[F].delay:
       exOpt match
         case None     => scribe.log(level, mdc, msg)
@@ -94,7 +95,7 @@ object BackendApp:
     for
       dispatcher <- Dispatcher.parallel[F]
       server <- Resource.make(getServer(config, dispatcher, session)): server =>
-        Async[F]
-          .fromCompletableFuture(Async[F].delay(server.closeAsync()))
-          .map(_ => ())
+        Async[F].fromCompletableFuture:
+          Async[F].delay:
+            server.closeAsync().thenApply(_ => ())
     yield server
